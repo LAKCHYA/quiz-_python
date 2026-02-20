@@ -28,9 +28,9 @@ import os
 import json
 from datetime import datetime
 
-# ─────────────────────────────────────────────
+
 #  COLOURS (works on Windows + Linux/Mac)
-# ─────────────────────────────────────────────
+
 class C:
     RESET  = "\033[0m"
     BOLD   = "\033[1m"
@@ -46,9 +46,7 @@ class C:
 def clr(text, colour):
     return f"{colour}{text}{C.RESET}"
 
-# ─────────────────────────────────────────────
-#  QUESTION BANK
-# ─────────────────────────────────────────────
+#questions
 QUESTIONS = {
     "Python": {
         "easy": [
@@ -265,9 +263,9 @@ HIGHSCORE_FILE = "highscores.json"
 TIME_LIMIT = 20  # seconds per question
 
 
-# ─────────────────────────────────────────────
+
 #  UTILITY FUNCTIONS
-# ─────────────────────────────────────────────
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -366,9 +364,9 @@ def timed_input(prompt, timeout=TIME_LIMIT):
     return result[0], time.time() - start
 
 
-# ─────────────────────────────────────────────
+
 #  QUIZ ENGINE
-# ─────────────────────────────────────────────
+
 def build_question_set(category, difficulty, num_questions):
     """Collect questions based on settings."""
     bank = []
